@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import Card from './Card'
 import ProgressBar from './ProgressBar';
+import Header from './Header.jsx';
 
 function App() {
   
@@ -81,6 +82,7 @@ function App() {
   },[]);
   return (
     <>
+    <Header/>
     <ProgressBar completed={completed}/>
       {notes &&
      <Card notes={notes}
