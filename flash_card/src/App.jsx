@@ -15,7 +15,7 @@ function App() {
    
   const [notes ,setNotes] = useState(null);
   
-  const [answer ,setAnswer] = useState(null);
+  const [button_Enable ,setButton] = useState(false);
 
 
   const flipCard = ()=>{
@@ -29,16 +29,20 @@ function App() {
 
     let index = tempNotes.findIndex(note=>{return note.id==id});
 
-     let nextNote = tempNotes[index+1];
+      if(index==tempNotes.length-1){
+        console.log('button is on ');
+         setButton(true);
+      }else{
 
-       console.log('next note is ',nextNote);
-
+        let nextNote = tempNotes[index+1];
+        
+        
         setNotes(nextNote);
+      }
     }
     
     const handlePrevious = () =>{
       setNotes(tempNotes[1].question)
-      setAnswerFlipper(false);
   }
   useEffect(()=>{
 
@@ -48,7 +52,10 @@ function App() {
   return (
     <>
       {notes &&
-     <Card notes={notes} answer={answer} flip={flipCard} next={handleNext} prev={handlePrevious} />
+     <Card notes={notes}
+      flip={flipCard} next={handleNext} 
+      prev={handlePrevious} 
+      btn={button_Enable}/>
       }
     </>
   )

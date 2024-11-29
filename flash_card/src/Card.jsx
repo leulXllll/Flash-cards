@@ -1,4 +1,4 @@
-const Card = ({notes , flip , next , prev}) => {
+const Card = ({notes , flip , next , prev ,btn}) => {
 
     console.log('notes id is ',notes.id);
 
@@ -10,8 +10,8 @@ const Card = ({notes , flip , next , prev}) => {
               }
                 
             <button onClick={()=>prev(notes.id)}>Previos</button>
-            <button onClick={flip}>Show answer</button>
-            <button onClick={()=>next(notes.id)}>Next</button>
+            <button  onClick={flip}>Show answer</button>
+            <button disabled={btn} onClick={()=>next(notes.id)}>Next</button>
         </div>
      );
 }
