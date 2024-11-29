@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import Card from './Card'
+import ProgressBar from './ProgressBar';
 
 function App() {
   
@@ -35,6 +36,8 @@ function App() {
    
   const [notes ,setNotes] = useState(null);
   
+  const [completed,setCompleted] = useState(0);
+
   const [button_prev ,setprevButton] = useState(false);
   
   const [button_next ,setnxtButton] = useState(false);
@@ -55,17 +58,19 @@ function App() {
         }
         setprevButton(false);
       setNotes(tempNotes[index+1]);
+      setCompleted(completed+1);
     }
     
     const handlePrevious = (id) =>{
 
       let index = tempNotes.findIndex(note=>{return note.id==id});
-
+      
       if(index==1){
         setprevButton(true);
       }
           setnxtButton(false);
           setNotes(tempNotes[index-1]);
+          setCompleted(completed-1);
 
     }
   useEffect(()=>{
@@ -76,6 +81,7 @@ function App() {
   },[]);
   return (
     <>
+    <ProgressBar completed={completed}/>
       {notes &&
      <Card notes={notes}
       flip={flipCard} next={handleNext} 
