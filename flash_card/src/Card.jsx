@@ -1,10 +1,17 @@
-const Card = ({notes , flip}) => {
+const Card = ({notes , flip , next , prev}) => {
+
+    console.log('notes id is ',notes.id);
+
     return ( 
         <div className="card">
-            <p>{notes} </p>
-            <button>Previos</button>
+            
+              {
+               (notes.questionBool)? <p>{notes.question}</p>:<p>{notes.answer}</p>
+              }
+                
+            <button onClick={()=>prev(notes.id)}>Previos</button>
             <button onClick={flip}>Show answer</button>
-            <button>Next</button>
+            <button onClick={()=>next(notes.id)}>Next</button>
         </div>
      );
 }
