@@ -4,14 +4,18 @@
     width: 100%;
     justify-content: center;
     align-items: center;
+    /* background-color: white; */
 }
 
-
+.progress-cont div{
+    color: white;
+}
 
 .progress-bar{
+    color: white;
     text-align: right;
     margin-top: 50px;
-    width: 60%;
+    width: 55%;
     height: 30px;
     background-color: gray;
     border: 2px solid black;

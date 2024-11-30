@@ -25,7 +25,7 @@ const ProgressBar = ({no_questions,finished}) => {
                         {completed}%
                     </div>
             </div>
-                   <span> {finished} out of {no_questions}</span>
+                   <div> {finished} out of {no_questions}</div>
         </div>
      );
 }
