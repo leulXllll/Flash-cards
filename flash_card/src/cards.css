@@ -10,7 +10,6 @@
     background-color: #DDA94B;
     align-items: center;
     padding: 10px;
-    /* margin-top: 10px; */
     border-radius: 30px;
 }
 button{
@@ -18,6 +17,7 @@ button{
     border: none;
     font-size: 1.4em;
     padding: 10px;
+    width: 9em;
 }
 button:hover{
     color: white;

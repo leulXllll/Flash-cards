@@ -11,8 +11,10 @@ const Card = ({notes , flip , next , prev ,btn_prv,btn_nxt}) => {
               }
                 
             <div className="buttons">
-                    <button disabled={btn_prv} onClick={()=>prev(notes.id)}>Previos</button>
-                    <button  onClick={flip}>Show answer</button>
+                    <button disabled={btn_prv} onClick={()=>prev(notes.id)}>Previous</button>
+                    <button  onClick={flip}>
+                        {(notes.questionBool) ?<span>Show answer</span>:<span>Hide answer</span>}
+                        </button>
                     <button disabled={btn_nxt} onClick={()=>next(notes.id)}>Next</button>
             </div>
         </div>
