@@ -85,7 +85,7 @@ function App() {
   return (
     <>
     <Header/>
-    <ProgressBar completed={completed}/>
+    {tempNotes && <ProgressBar finished={completed} no_questions={tempNotes.length-1}/>}
       {notes &&
      <Card notes={notes}
       flip={flipCard} next={handleNext} 

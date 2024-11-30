@@ -17,7 +17,7 @@ button{
     border: none;
     font-size: 1.4em;
     padding: 10px;
-    width: 9em;
+    width: 7em;
 }
 button:hover{
     color: white;
@@ -31,7 +31,9 @@ button:hover{
     justify-content: space-around;
     align-items: center;
     border-radius: 20px;
-    margin: 5px;
+    margin: auto;
+    margin-top: 13px;
+    width: 55%;
 }
 p{
     font-size: 1.4em;
